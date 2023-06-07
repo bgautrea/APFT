@@ -7,6 +7,6 @@ RUN npm i && \
     npm run build
 
 FROM nginxinc/nginx-unprivileged:latest
-EXPOSE 8080
-COPY ./default.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+#COPY ./default.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /run/app/build /usr/share/nginx/html
